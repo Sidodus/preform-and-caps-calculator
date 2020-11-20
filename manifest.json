@@ -11,10 +11,16 @@
       "src": "Preform_Cap_Logo.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "Preform_Cap_Logo.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://sidodus.github.io/preform-and-caps-calculator/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffcbe4",
+  "background_color": "#fa99ca",
+  "scope": "/"
 }
