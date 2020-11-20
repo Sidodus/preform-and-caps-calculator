@@ -1,0 +1,20 @@
+{
+  "short_name": "Preform & Caps Calculator",
+  "name": "Preform & Caps Calculator",
+  "icons": [
+    {
+      "src": "Preform_Cap_Logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "Preform_Cap_Logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
