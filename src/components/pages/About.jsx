@@ -140,7 +140,14 @@ class About extends Component {
                   <div className="card-footer">
                     <h6 className="text-secondary">
                       Developed by
-                      <a href="https://github.com/Sidodus"> Sidodus</a>
+                      <a
+                        href="https://github.com/Sidodus"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {" "}
+                        Sidodus
+                      </a>
                     </h6>
                   </div>
                 </div>

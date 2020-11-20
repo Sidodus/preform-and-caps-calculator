@@ -1,7 +1,7 @@
 {
   "name": "preform-and-caps-calculator",
   "version": "0.1.0",
-  "homepage": "https://Sidodus.github.io/preform-and-caps-calculator.git",
+  "homepage": "https://sidodus.github.io/preform-and-caps-calculator/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
