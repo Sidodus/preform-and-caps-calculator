@@ -4,7 +4,7 @@
 <div align="center">
 
   <a href="./public/Preform_Cap_Logo.png">
-    <img src="./public/Preform_Cap_Logo.png" alt="Preform And Cap Image" width="278" />
+    <img src="./Preform_Cap_Logo.png" alt="Preform And Cap Image" width="278" />
   </a>
   </div>
 
