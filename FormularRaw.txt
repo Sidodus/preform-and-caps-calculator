@@ -1,0 +1,67 @@
+***CAPS***
+1* = Total Caps = Cap Pieces Input
+1a = Total Caps:= capsPiecesInput -----------------------------------------------
+
+2* = Total Packs = Cap Pieces Input / Caps Pieces Per Pack
+2a = totalPacks:= capsPiecesInput / capsPiecesPerPack
+
+3 = Total Crates:= Caps Pieces Input / 12
+3a = totalCrates:= capsPiecesInput / 12
+
+4 = Cap Label Unit Price:= Cap Label Unit Price
+4a = capLabelUnitPrice:= cap_label_unit_price -----------------------------------------------
+
+5 = Cap Label Total Price:= Cap Label Unit Price * Cap Pieces Input
+5a = capLabelTotalPrice:= capLabelUnitPrice * Cap Pieces Input
+
+6 = Cap Total Amount:= (Cap Price Per Unit * Caps Pieces Input) + Cap Label Total Price
+6a = Cap totalAmount:= (cap_price_per_unit * capsPiecesInput) + capLabelTotalPrice
+
+7 = Cap Unit Amount:= Cap Price Per Unit + Cap Label Unit Price
+7a = Cap unitAmount:= Cap Price Per Unit + Cap Label Unit Price
+
+
+
+
+***Preform***
+1 = Total Preform:= Preform Pieces Input
+1a = Total Preform:= preformPiecesInput -----------------------------------------------
+
+2 = Total Packs:= Preform Pieces Input / Preform Pieces Per Pack
+2a = totalPacks:= preformPiecesInput / preform_pieces_per_pack
+
+3 = Total Kg:= (Preform Pieces Input * Preform Grams) / 1000
+3a = totalKg:= (preformPiecesInput * preformGrams) / 1000
+
+4 =   Total Crates:= Preform Pieces Input / 12
+4a =   totalCrates:= preformPiecesInput / 12
+
+5 = Total Amount:=  Total Kg * Preform Price Per Kg
+5a = totalAmount:=  totalKg * preform_price_per_kg
+
+6 = Preform Unit Amount:= Total Amount / Preform Pieces Input
+6a = Preform unitAmount:= totalAmount / preformPiecesInput
+
+
+
+***Kg***
+0 = Preform Kg Per Pack:= (Preform Pack Pieces * Preform Grams) / 1000
+0a = preform_kg_per_pack:= (preformPackPieces * preformGrams) / 1000
+
+1 = Total Preform:= (Preform Kg Input / Preform Kg Per Pack) * Preform Pieces Per Pack
+1a = Total Preform:= (preformKgInput / preform_kg_per_pack) * preform_pieces_per_pack
+
+2 = Total Packs:= Preform Kg Input / Preform Kg Per Pack
+2a = totalPacks:= preformKgInput / preform_kg_per_pack
+
+3a = totalKg:= preformKgInput
+3a = totalKg:= preformKgInput -----------------------------------------------
+
+4 = Total Crates:= Total Preform / 12
+4a = total Crates:= Total Preform / 12
+
+5 = Preform Total Amount:= Total Kg * Preform Price Per Kg
+5a = Preform totalAmount:= totalKg * preform_price_per_kg
+
+6 = Unit Amount:= Total Amount / Total Name
+6a = unitAmount:= totalAmount / totalName
