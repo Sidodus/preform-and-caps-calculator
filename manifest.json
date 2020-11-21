@@ -19,6 +19,12 @@
       "type": "image/png",
       "sizes": "1024x1024",
       "purpose": "any maskable"
+    },
+    {
+      "src": "Preform_Cap_Logo.png",
+      "type": "image/png",
+      "sizes": "1118x605",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "https://sidodus.github.io/preform-and-caps-calculator/",
