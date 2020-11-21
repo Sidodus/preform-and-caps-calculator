@@ -3,24 +3,15 @@
   "name": "Preform & Caps Calculator",
   "icons": [
     {
-      "src": "Preform_Cap_Logo.png",
+      "src": "Preform_Cap_Logo192x192.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "Preform_Cap_Logo.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    },
-    {
-      "src": "Preform_Cap_Logo.png",
-      "type": "image/png",
-      "sizes": "1024x1024"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "https://sidodus.github.io/preform-and-caps-calculator/",
   "display": "standalone",
-  "theme_color": "#ffcbe4",
-  "background_color": "#fa99ca",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
   "scope": "/"
 }
