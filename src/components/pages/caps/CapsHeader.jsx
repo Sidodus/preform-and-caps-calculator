@@ -43,7 +43,7 @@ class CapsHeader extends Component {
       <div className="row col">
         <form onSubmit={this.submitCapPrice} className="col-md-6 mx-auto">
           <h4>
-            Cap Price Per Unit:{" "}
+            <label htmlFor="inputCapPrice">Cap Price Per Unit: </label>
             <span style={{ fontSize: "larger" }}>
               ₦<span id="capPricePerUnit"></span>
             </span>
@@ -80,7 +80,7 @@ class CapsHeader extends Component {
         {/* (((((((((((((((((((((((((((((((((((START))))))))))))))))))))))))))))))))))) */}
         <form onSubmit={this.submitCapLabelPrice} className="col-md-4 mx-auto">
           <h4>
-            Cap Labelling:-{" "}
+            <label htmlFor="inputCapLabelPrice">Cap Labelling:- </label>
             <span id="capLabelPrice" style={{ fontSize: "larger" }}></span>k
           </h4>
 

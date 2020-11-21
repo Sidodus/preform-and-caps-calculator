@@ -44,7 +44,7 @@ class PreformHeader extends Component {
       <div className="row col">
         <form onSubmit={this.submitPreformPrice} className="col-md-6 mx-auto">
           <h4>
-            Preform Price Per Kg:{" "}
+            <label htmlFor="preformPriceInput">Preform Price Per Kg: </label>
             <span style={{ fontSize: "larger" }}>
               ₦<span id="preformPricePerKg"></span>
             </span>
@@ -81,7 +81,7 @@ class PreformHeader extends Component {
 
         <form onSubmit={this.submitPreformGrams} className="col-md-4 mx-auto">
           <h4>
-            Preform Unit Grams:{" "}
+            <label htmlFor="preformGramsInput">Preform Unit Grams: </label>
             <span id="PreformGrams" style={{ fontSize: "larger" }}></span>
             <span>grams</span>
           </h4>

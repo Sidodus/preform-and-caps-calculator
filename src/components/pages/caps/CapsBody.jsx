@@ -11,7 +11,7 @@ import { AlertInputDanger } from "../../utils/AlertInputDanger";
 
 class CapsBody extends Component {
   state = {
-    changeCapPackPieces: "",
+    changeCapsPackPieces: "",
     capsPiecesInput: "",
     capsPiecesInputStep: "",
   };
@@ -45,11 +45,11 @@ class CapsBody extends Component {
     e.preventDefault();
 
     // Only Run If User Enters An Input
-    const { changeCapPackPieces } = this.state;
-    if (changeCapPackPieces !== "") {
-      this.props.capsPackPieces(changeCapPackPieces);
+    const { changeCapsPackPieces } = this.state;
+    if (changeCapsPackPieces !== "") {
+      this.props.capsPackPieces(changeCapsPackPieces);
 
-      this.setState({ changeCapPackPieces: "" });
+      this.setState({ changeCapsPackPieces: "" });
     }
   };
 
@@ -100,7 +100,7 @@ class CapsBody extends Component {
 
   render() {
     const {
-      changeCapPackPieces,
+      changeCapsPackPieces,
       capsPiecesInput,
       capsPiecesInputStep,
     } = this.state;
@@ -129,8 +129,10 @@ class CapsBody extends Component {
             <span className="text-secondary h6 float-right">CAPS</span>
             <small>
               <i className="col-md-6 text-dark">
-                A Pack contains <span id="capsPackPieces"></span> pieces of
-                Caps:
+                <label htmlFor="changeCapsPackPieces">
+                  A Pack contains <span id="capsPackPieces"></span> pieces of
+                  Caps:
+                </label>
               </i>
               <div
                 className="col-md-6 input-group input-group-sm mb-3"
@@ -138,7 +140,7 @@ class CapsBody extends Component {
               >
                 <div className="input-group-append">
                   <button
-                    id="changeCapsPackPieces"
+                    id="changeCapsPackPiecesBtn"
                     className="btn btn-primary"
                     style={{
                       borderRadius: "50px 15px 50px 15px",
@@ -151,15 +153,15 @@ class CapsBody extends Component {
                   </button>
                 </div>
                 <input
-                  id="changeCapPackPieces"
+                  id="changeCapsPackPieces"
                   style={{ borderRadius: "50px 15px 50px 15px" }}
                   type="number"
                   className="form-control"
                   min="1"
                   step="any"
-                  name="changeCapPackPieces"
+                  name="changeCapsPackPieces"
                   placeholder="Per Pack"
-                  value={changeCapPackPieces}
+                  value={changeCapsPackPieces}
                   onChange={this.valueChanged}
                   required
                 />
@@ -172,10 +174,12 @@ class CapsBody extends Component {
                 <ins>Required Field</ins>:
               </h4>
               <div className="form-group">
-                <label htmlFor="email">
+                <label htmlhtmlFor="email">
                   <h5 style={{ margin: "2vh 0 -1vh 0" }}>
                     <span>Enter Caps Per Pack: </span> <br />
-                    <span className="col text-body">Total Pieces</span>
+                    <label id="totalCapPieces">
+                      <span className="col text-body">Total Pieces</span>
+                    </label>
                   </h5>
                 </label>
                 <div id="capsAlertNote">
@@ -186,6 +190,7 @@ class CapsBody extends Component {
                     <span className="input-group-text">Packs</span>
                   </div>
                   <input
+                    htmlFor="totalCapPieces"
                     id="capsPiecesInput"
                     className="form-control"
                     type="number"

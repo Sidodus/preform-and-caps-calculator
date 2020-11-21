@@ -185,17 +185,19 @@ class PreformBody extends Component {
             <h4 className="row col text-secondary">Optional Field:</h4>
             <span className="text-secondary h6 float-right">PREFORM</span>
             <small>
-              <i className="col-md-6 text-dark">
-                A pack contains <span id="preformPackPieces"></span> pieces of
-                Preform:{" "}
-              </i>
+              <label htmlFor="changePreformPackPieces">
+                <i className="col-md-6 text-dark">
+                  A pack contains <span id="preformPackPieces"></span> pieces of
+                  Preform:{" "}
+                </i>
+              </label>
               <div
                 className="col-md-6 input-group input-group-sm mb-3"
                 style={{ marginLeft: "-17px" }}
               >
                 <div className="input-group-append">
                   <button
-                    id="changePreformPackPieces"
+                    id="changePreformPackPiecesBtn"
                     className="btn btn-primary"
                     style={{
                       borderRadius: "50px 15px 50px 15px",
@@ -239,7 +241,7 @@ class PreformBody extends Component {
                       </span>
 
                       <div className="col text-body d-inline-flex justify-content-between">
-                        Total Pieces
+                        <label htmlFor="preformPiecesInput">Total Pieces</label>
                       </div>
                     </h5>
                   </label>
@@ -292,7 +294,7 @@ class PreformBody extends Component {
                       </span>
 
                       <div className="col text-body d-inline-flex justify-content-between">
-                        Total Kg
+                        <label htmlFor="preformKgInput">Total Kg</label>
                       </div>
                     </h5>
                   </label>

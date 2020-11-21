@@ -5,11 +5,11 @@
     <meta charset='http-equiv="Content-Type" content="text/html; utf-8' />
     <meta name="language" content="English">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#ffcbe4" />
 
     <meta name="description" content="Preform & Caps Calculator is a useful application for calculating the Preform and Caps needed in production." />
 
-    <meta name="keywords" content="Preform & Caps Calculator, Preform, Caps, Cap Calculator, React, React.js, Redux, Redux State Management, JavaScript, HTML, CSS, Bootstrap, Meta, Meta Tags, Metadata" />
+    <meta name="keywords" content="Preform & Caps Calculator, Preform, Caps, Cap Calculator, React, React.js, Redux, Redux State Management, JavaScript, HTML, CSS, Bootstrap, Meta, Meta Tags, Metadata, Progressive Web App, PWA" />
 
     <meta name="author" content="Saheed Odulaja" />
     <meta name="copyright" content="MIT License" />
@@ -29,7 +29,7 @@
       property="og:description"
       content="Preform & Caps Calculator is a useful application for calculating the Preform and Caps needed in production."
     />
-    <meta property="og:image" content="%PUBLIC_URL%/SidoByMe.png" />
+    <meta property="og:image" content="%PUBLIC_URL%/Preform_Cap_Logo192x192.png" />
 
     <meta name="twitter:card" content="Preform & Caps Calculator is a useful application for calculating the Preform and Caps needed in production." />
     <meta name="twitter:site" content="@https://sidodus.github.io/preform-and-caps-calculator/" />
@@ -39,8 +39,6 @@
       name="twitter:description"
       content="Preform & Caps Calculator is a useful application for calculating the Preform and Caps needed in production."
     />
-
-    <link rel="icon" href="%PUBLIC_URL%/SidoByMe.png">
 
     <link rel="me" href="https://github.com/Sidodus/" type="text/html" />
     <link rel="me" href="https://twitter.com/SaheedOdulaja" type="text/html" />
@@ -52,7 +50,21 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link rel="icon" href="%PUBLIC_URL%/Preform_Cap_Logo.png">
+    <!-- PWA For Apple -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Preform & Caps Calculator">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Preform_Cap_Logo192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Preform_Cap_Logo.png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Preform_Cap_Logo.png" sizes="1024x1024" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Preform_Cap_Logo.png" sizes="1118x605" />
+
+    <!-- PWA For Windows -->
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/Preform_Cap_Logo192x192.png">
+    <meta name="msapplication-TileColor" content="black">
+
+
+    <link rel="icon" href="%PUBLIC_URL%/Preform_Cap_Logo192x192.png">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -77,5 +89,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- PWA For Desktop -->
+    <button class="add-button btn btn-dark" style="border-color: black; border-radius: 15px 15px 50px 50px;
+    box-shadow:
+      0 4px 8px 0 rgba(251, 250, 250, 0.548), 0 6px 20px 0 rgba(41, 40, 40, 0.397)">Add to home screen</button>
   </body>
 </html>

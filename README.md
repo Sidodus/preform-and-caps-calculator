@@ -2,11 +2,16 @@
 <h6 align="center" style="color: blue; margin-top: -1rem;"><em>Version 0.1.0</em></h6>
 
 <div align="center">
+  <a href="./public/Preform_&_Caps_Calculator-Lighthouse_Report.png">
+    <img src="./public/Preform_&_Caps_Calculator-Lighthouse_Report.png" alt="Preform And Cap Image" width="100%" />
+  </a>
+</div>
 
+<div align="center">
   <a href="./public/Preform_Cap_Logo.png">
     <img src="./public/Preform_Cap_Logo.png" alt="Preform And Cap Image" width="278" />
   </a>
-  </div>
+</div>
 
 <br />
 
@@ -65,7 +70,7 @@
 
 Use Preform & Caps Calculator @ <b> [Preform & Caps Calculator](https://sidodus.github.io/preform-and-caps-calculator/)</b>
 
-<h6 style="margin: 1em;"><em>Developed With React.js & Redux State Management</em></h6>
+<h6 style="margin: 1em;"><em>A Progressive Web App (PWA) Developed With React.js & Redux State Management</em></h6>
 
 > Preform & Caps Calculator Is Developed By Saheed Odulaja. <br >
 > Feel Free To Fork This Repository. <br />

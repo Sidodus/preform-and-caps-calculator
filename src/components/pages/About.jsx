@@ -139,7 +139,7 @@ class About extends Component {
                   {/* ((((((((((((((((((((((((((((End)))))))))))))))))))))))))))) */}
                   <div className="card-footer">
                     <h6 className="text-secondary">
-                      Developed by
+                      A Progressive Web App (PWA) Developed By
                       <a
                         href="https://github.com/Sidodus"
                         target="_blank"
