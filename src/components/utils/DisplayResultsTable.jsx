@@ -81,14 +81,14 @@ class DisplayResultsTable extends Component {
           <div>
             <button
               id="clearResultTable"
-              className="btn btn-danger float-right mb-1"
+              className="btn btn-danger float-right m-1"
               style={{
                 border: "none",
                 borderRadius: "50px 15px 15px 50px",
               }}
               onClick={this.clearResultTable}
             >
-              Clear Table
+              Clear Result
             </button>
             <table
               style={{ borderRadius: "50px 15px 50px 15px", clear: "both" }}
