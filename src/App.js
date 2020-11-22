@@ -17,9 +17,24 @@ import "@fortawesome\\\\fontawesome-free/css/all.min.css";
 
 class App extends Component {
   componentDidMount() {
-    // Preset Toggler For Preform Required Field
-    sessionStorage.setItem("TogglePreformDisplayResultBtn", false);
-    sessionStorage.setItem("ToggleCapsDisplayResultBtn", false);
+    // Preset Toggle BTN
+    let togglePreform = JSON.parse(
+      JSON.parse(localStorage.getItem("TogglePreformDisplayResultBtn"))
+    );
+    let toggleCaps = JSON.parse(
+      JSON.parse(localStorage.getItem("ToggleCapsDisplayResultBtn"))
+    );
+
+    if (togglePreform === null) {
+      localStorage.setItem(
+        "TogglePreformDisplayResultBtn",
+        JSON.stringify(false)
+      );
+    }
+
+    if (toggleCaps === null) {
+      localStorage.setItem("ToggleCapsDisplayResultBtn", JSON.stringify(false));
+    }
   }
   render() {
     return (

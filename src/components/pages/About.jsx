@@ -71,7 +71,7 @@ class About extends Component {
                     >
                       {" "}
                       Preform &amp; Caps Calculator <br />
-                      <p className="text-secondary h6">Version 0.1.0</p>
+                      <p className="text-secondary h6">Version 1.0.0</p>
                     </h1>
                   </div>
                   <div className="card-body bg-secondary text-light">

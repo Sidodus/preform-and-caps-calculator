@@ -21,6 +21,11 @@ class PreformHeader extends Component {
     // Only Run If User Enters An Input
     const { preformPriceInput } = this.state;
     if (preformPriceInput !== "") {
+      localStorage.setItem(
+        "preformPricePerKg",
+        JSON.stringify(preformPriceInput)
+      );
+
       this.props.preformPricePerKg(preformPriceInput);
 
       this.setState({ preformPriceInput: "" });
@@ -33,6 +38,8 @@ class PreformHeader extends Component {
     // Only Run If User Enters An Input
     const { preformGramsInput } = this.state;
     if (preformGramsInput !== "") {
+      localStorage.setItem("preformGrams", JSON.stringify(preformGramsInput));
+
       this.props.preformGrams(preformGramsInput);
 
       this.setState({ preformGramsInput: "" });

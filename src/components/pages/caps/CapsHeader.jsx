@@ -20,6 +20,8 @@ class CapsHeader extends Component {
     // Only Run If User Enters An Input
     const { inputCapPrice } = this.state;
     if (inputCapPrice !== "") {
+      localStorage.setItem("capPricePerUnit", JSON.stringify(inputCapPrice));
+
       this.props.capPricePerUnit(inputCapPrice);
 
       this.setState({ inputCapPrice: "" });
@@ -32,6 +34,11 @@ class CapsHeader extends Component {
     // Only Run If User Enters An Input
     const { inputCapLabelPrice } = this.state;
     if (inputCapLabelPrice !== "") {
+      localStorage.setItem(
+        "capLabelUnitPrice",
+        JSON.stringify(inputCapLabelPrice)
+      );
+
       this.props.capLabelUnitPrice(inputCapLabelPrice);
 
       this.setState({ inputCapLabelPrice: "" });

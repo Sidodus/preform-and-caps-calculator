@@ -5,12 +5,57 @@ import PropTypes from "prop-types";
 import CapsHeader from "./CapsHeader";
 import CapsBody from "./CapsBody";
 
+import { capPricePerUnit } from "../../../actions/capPricePerUnitAction";
+import { capLabelUnitPrice } from "../../../actions/capLabelUnitPriceAction";
+import { capsPackPieces } from "../../../actions/capPackPiecesAction";
+import { processCapsResult } from "../../../actions/processCapsResultAction";
+
 import JSnumberToWordProcessor from "js-number-to-word-processor";
 
 class Caps extends Component {
   componentDidMount() {
+    // Pull Data From Storage Into Application If Any
+    const capPricePerUnit = JSON.parse(localStorage.getItem("capPricePerUnit"));
+    const capLabelUnitPrice = JSON.parse(
+      localStorage.getItem("capLabelUnitPrice")
+    );
+    const capsPackPieces = JSON.parse(localStorage.getItem("capsPackPieces"));
+    const processCapsResult = JSON.parse(
+      localStorage.getItem("processCapsResult")
+    );
+
+    if (capPricePerUnit) {
+      this.props.capPricePerUnit(capPricePerUnit);
+    }
+
+    if (capLabelUnitPrice) {
+      this.props.capLabelUnitPrice(capLabelUnitPrice);
+    }
+
+    if (capsPackPieces) {
+      this.props.capsPackPieces(capsPackPieces);
+    }
+
+    // Display Caps Result
+    if (processCapsResult) {
+      this.props.processCapsResult(processCapsResult);
+
+      if (JSON.stringify(processCapsResult.type) === JSON.stringify({})) {
+        localStorage.setItem(
+          "ToggleCapsDisplayResultBtn",
+          JSON.stringify(false)
+        );
+      } else if (processCapsResult.type === "Total Caps") {
+        localStorage.setItem(
+          "ToggleCapsDisplayResultBtn",
+          JSON.stringify(false) // Perhaps Set To true
+        );
+        document.getElementById("ToggleCapsDisplayResultBtn").click();
+      }
+    }
+
     // Manage How To Use BTN By Setting Display Color To Lightgray On Page Change
-    sessionStorage.setItem("howToUse", false);
+    localStorage.setItem("howToUse", JSON.stringify(false));
     document.getElementById("howToUseBtn").style.color = "lightgray";
 
     // Manage Menu Icons On Page Load
@@ -146,6 +191,10 @@ Caps.propType = {
   cap_price_per_unit: PropTypes.string.isRequired,
   cap_label_unit_price: PropTypes.string.isRequired,
   capsPiecesPerPack: PropTypes.string.isRequired,
+  capPricePerUnit: PropTypes.func.isRequired,
+  capLabelUnitPrice: PropTypes.func.isRequired,
+  capsPackPieces: PropTypes.func.isRequired,
+  processCapsResult: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -154,4 +203,9 @@ const mapStateToProps = (state) => ({
   capsPiecesPerPack: state.cap_pack_pieces.cap_pieces,
 });
 
-export default connect(mapStateToProps)(Caps);
+export default connect(mapStateToProps, {
+  capPricePerUnit,
+  capLabelUnitPrice,
+  capsPackPieces,
+  processCapsResult,
+})(Caps);

@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { preformPackKg } from "../../../actions/preformPackKgAction";
+import { preformPricePerKg } from "../../../actions/preformPricePerKgAction";
+import { preformGrams } from "../../../actions/preformGramsAction";
+import { preformPackPieces } from "../../../actions/preformPackPiecesAction";
+import { processPreformResult } from "../../../actions/processPreformResultAction";
 import PreformBody from "./PreformBody";
 import PreformHeader from "./PreformHeader";
 
@@ -10,8 +14,53 @@ import JSnumberToWordProcessor from "js-number-to-word-processor";
 
 class Preform extends Component {
   componentDidMount() {
+    // Pull Data From Storage Into Application If Any
+    const preformPricePerKg = JSON.parse(
+      localStorage.getItem("preformPricePerKg")
+    );
+    const preformGrams = JSON.parse(localStorage.getItem("preformGrams"));
+    const preformPackPieces = JSON.parse(
+      localStorage.getItem("preformPackPieces")
+    );
+    const processPreformResult = JSON.parse(
+      localStorage.getItem("processPreformResult")
+    );
+
+    if (preformPricePerKg) {
+      this.props.preformPricePerKg(preformPricePerKg);
+    }
+
+    if (preformGrams) {
+      this.props.preformGrams(preformGrams);
+    }
+
+    if (preformPackPieces) {
+      this.props.preformPackPieces(preformPackPieces);
+    }
+
+    // Display Preform Result
+    if (processPreformResult) {
+      this.props.processPreformResult(processPreformResult);
+
+      if (JSON.stringify(processPreformResult.type) === JSON.stringify({})) {
+        localStorage.setItem(
+          "TogglePreformDisplayResultBtn",
+          JSON.stringify(false)
+        );
+      } else if (
+        processPreformResult.type === "Total Preform" ||
+        processPreformResult.type === "Total Kg"
+      ) {
+        localStorage.setItem(
+          "TogglePreformDisplayResultBtn",
+          JSON.stringify(false) // Perhaps Set To true
+        );
+        document.getElementById("TogglePreformDisplayResultBtn").click();
+      }
+    }
+
     // Manage How To Use BTN By Setting Display Color To Lightgray On Page Change
-    sessionStorage.setItem("howToUse", false);
+    localStorage.setItem("howToUse", JSON.stringify(false));
     document.getElementById("howToUseBtn").style.color = "lightgray";
 
     // Manage Menu Icons On Page Load
@@ -169,6 +218,10 @@ Preform.propType = {
   preformPiecesPerPack: PropTypes.string.isRequired,
   unitPreformGrams: PropTypes.string.isRequired,
   preformPackKg: PropTypes.func.isRequired,
+  preformPricePerKg: PropTypes.func.isRequired,
+  preformGrams: PropTypes.func.isRequired,
+  preformPackPieces: PropTypes.func.isRequired,
+  processPreformResult: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -178,4 +231,10 @@ const mapStateToProps = (state) => ({
   unitPreformGrams: state.preform_grams.grams,
 });
 
-export default connect(mapStateToProps, { preformPackKg })(Preform);
+export default connect(mapStateToProps, {
+  preformPackKg,
+  preformPricePerKg,
+  preformGrams,
+  preformPackPieces,
+  processPreformResult,
+})(Preform);

@@ -1,24 +1,31 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { DisplayResultsTable } from "../../utils/DisplayResultsTable";
+import DisplayResultsTable from "../../utils/DisplayResultsTable";
 
 class CapsResult extends Component {
   componentDidMount() {
+    let toggle = JSON.parse(
+      JSON.parse(localStorage.getItem("ToggleCapsDisplayResultBtn"))
+    );
+
     // Display Table If Its Contains Info
-    if (this.props.process_caps_result.type) {
+    if (this.props.process_caps_result.type && !toggle) {
       document.getElementById("ToggleCapsDisplayResultBtn").click();
-      sessionStorage.setItem("ToggleCapsDisplayResultBtn", true);
+      localStorage.setItem("ToggleCapsDisplayResultBtn", JSON.stringify(true));
     }
   }
 
   toggler() {
     // Toggle Display BTN In Input Field Is Empty
     let toggler = JSON.parse(
-      sessionStorage.getItem("ToggleCapsDisplayResultBtn")
+      localStorage.getItem("ToggleCapsDisplayResultBtn")
     );
 
-    sessionStorage.setItem("ToggleCapsDisplayResultBtn", !toggler);
+    localStorage.setItem(
+      "ToggleCapsDisplayResultBtn",
+      JSON.stringify(!toggler)
+    );
   }
   render() {
     const { process_caps_result } = this.props;

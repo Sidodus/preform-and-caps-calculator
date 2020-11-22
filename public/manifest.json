@@ -29,7 +29,7 @@
   ],
   "start_url": "https://sidodus.github.io/preform-and-caps-calculator/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#9fff05",
+  "theme_color": "#2c2c2e",
+  "background_color": "#1c2aee",
   "scope": "/"
 }

@@ -28,12 +28,12 @@ class CapsBody extends Component {
   componentWillUnmount() {
     // Close Result BTN If Opened
     let toggler = JSON.parse(
-      sessionStorage.getItem("ToggleCapsDisplayResultBtn")
+      localStorage.getItem("ToggleCapsDisplayResultBtn")
     );
 
     if (toggler) {
       document.getElementById("ToggleCapsDisplayResultBtn").click();
-      sessionStorage.setItem("ToggleCapsDisplayResultBtn", false);
+      localStorage.setItem("ToggleCapsDisplayResultBtn", false);
     }
   }
 
@@ -47,6 +47,11 @@ class CapsBody extends Component {
     // Only Run If User Enters An Input
     const { changeCapsPackPieces } = this.state;
     if (changeCapsPackPieces !== "") {
+      localStorage.setItem(
+        "capsPackPieces",
+        JSON.stringify(changeCapsPackPieces)
+      );
+
       this.props.capsPackPieces(changeCapsPackPieces);
 
       this.setState({ changeCapsPackPieces: "" });
@@ -61,12 +66,12 @@ class CapsBody extends Component {
     if (capsPiecesInput !== "") {
       // Display Result By Toggling Result BTN
       let toggler = JSON.parse(
-        sessionStorage.getItem("ToggleCapsDisplayResultBtn")
+        localStorage.getItem("ToggleCapsDisplayResultBtn")
       );
 
       if (!toggler) {
         document.getElementById("ToggleCapsDisplayResultBtn").click();
-        sessionStorage.setItem("ToggleCapsDisplayResultBtn", true);
+        localStorage.setItem("ToggleCapsDisplayResultBtn", true);
       }
 
       const {
@@ -84,6 +89,8 @@ class CapsBody extends Component {
       };
 
       const result = this.props.processAllResults(data);
+
+      localStorage.setItem("processCapsResult", JSON.stringify(result));
 
       this.props.processCapsResult(result);
 
@@ -174,7 +181,7 @@ class CapsBody extends Component {
                 <ins>Required Field</ins>:
               </h4>
               <div className="form-group">
-                <label htmlhtmlFor="email">
+                <label htmlFor="email">
                   <h5 style={{ margin: "2vh 0 -1vh 0" }}>
                     <span>Enter Caps Per Pack: </span> <br />
                     <label id="totalCapPieces">

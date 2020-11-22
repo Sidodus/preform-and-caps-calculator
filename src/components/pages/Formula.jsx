@@ -57,7 +57,7 @@ export default class Formula extends Component {
                   <div className="card-header">
                     <h4>
                       Preform &amp; Caps Calculator Formula <br />
-                      <sup className="text-muted">v0.1.0</sup>
+                      <sup className="text-muted">v1.0.0</sup>
                     </h4>
 
                     <h5

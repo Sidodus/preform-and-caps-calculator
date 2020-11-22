@@ -1,6 +1,6 @@
 {
   "name": "preform-and-caps-calculator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://sidodus.github.io/preform-and-caps-calculator/",
   "private": true,
   "dependencies": {

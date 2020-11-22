@@ -34,12 +34,12 @@ class PreformBody extends Component {
   componentWillUnmount() {
     // Close Result BTN If Opened
     let toggler = JSON.parse(
-      sessionStorage.getItem("TogglePreformDisplayResultBtn")
+      localStorage.getItem("TogglePreformDisplayResultBtn")
     );
 
     if (toggler) {
       document.getElementById("TogglePreformDisplayResultBtn").click();
-      sessionStorage.setItem("TogglePreformDisplayResultBtn", false);
+      localStorage.setItem("TogglePreformDisplayResultBtn", false);
     }
   }
 
@@ -53,6 +53,10 @@ class PreformBody extends Component {
     // Only Run If User Enters An Input
     const { changePreformPackPieces } = this.state;
     if (changePreformPackPieces !== "") {
+      localStorage.setItem(
+        "preformPackPieces",
+        JSON.stringify(changePreformPackPieces)
+      );
       this.props.preformPackPieces(changePreformPackPieces);
 
       this.setState({ changePreformPackPieces: "" });
@@ -64,12 +68,12 @@ class PreformBody extends Component {
 
     // Toggle Display BTN In Input Field Is Empty
     let toggler = JSON.parse(
-      sessionStorage.getItem("TogglePreformDisplayResultBtn")
+      localStorage.getItem("TogglePreformDisplayResultBtn")
     );
 
     if (!toggler) {
       document.getElementById("TogglePreformDisplayResultBtn").click();
-      sessionStorage.setItem("TogglePreformDisplayResultBtn", true);
+      localStorage.setItem("TogglePreformDisplayResultBtn", true);
     }
 
     // Only Run If User Enters An Input
@@ -91,6 +95,8 @@ class PreformBody extends Component {
 
       const result = this.props.processAllResults(data);
 
+      localStorage.setItem("processPreformResult", JSON.stringify(result));
+
       this.props.processPreformResult(result);
 
       this.setState({ preformPiecesInput: "" });
@@ -109,12 +115,12 @@ class PreformBody extends Component {
 
     // Display Result By Toggling Result BTN
     let toggler = JSON.parse(
-      sessionStorage.getItem("TogglePreformDisplayResultBtn")
+      localStorage.getItem("TogglePreformDisplayResultBtn")
     );
 
     if (!toggler) {
       document.getElementById("TogglePreformDisplayResultBtn").click();
-      sessionStorage.setItem("TogglePreformDisplayResultBtn", true);
+      localStorage.setItem("TogglePreformDisplayResultBtn", true);
     }
 
     // Only Run If User Enters An Input
@@ -137,6 +143,8 @@ class PreformBody extends Component {
       };
 
       const result = this.props.processAllResults(data);
+
+      localStorage.setItem("processPreformResult", JSON.stringify(result));
 
       this.props.processPreformResult(result);
 

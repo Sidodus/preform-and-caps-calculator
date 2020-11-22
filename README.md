@@ -66,7 +66,15 @@
           </h6>
           <h6>That's It And You Would See The  Results Rollout</h6>
 
-<h2 align="center"></h2>
+<hr />
+<h4><ins>UPDATE</ins></h4>
+<h6 margin-bottom="-5px"><em>Version: 1.0.0</em></h6>
+<ul>
+  <li>Implemented Progressive Web App (PWA).</li>
+  <li>Implemented Result Persistance To Storage.</li>
+</ul>
+
+<hr />
 
 Use Preform & Caps Calculator @ <b> [Preform & Caps Calculator](https://sidodus.github.io/preform-and-caps-calculator/)</b>
 
